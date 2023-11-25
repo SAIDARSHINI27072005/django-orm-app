@@ -10,20 +10,40 @@ Include your ER diagram here
 ## DESIGN STEPS
 
 ### STEP 1:
-
+clone the problem from github
 ### STEP 2:
-
+create a new app in django project
 ### STEP 3:
-
-Write your own steps
+Enter the code for admin.py and models.py
 
 ## PROGRAM
 
-Include your code here
+models.py
+from django.db import models
+from django.contrib import admin
+# Create your models here.
+class Student (models.Model):
+referencenumber=models.CharField(max_length=20,help_text="reference 
+number")
+ name=models.CharField(max_length=100)
+ age=models.IntegerField()
+ email=models.EmailField()
+ mobileno=models.IntegerField()
+class StudentAdmin(admin.ModelAdmin):
+ list_display=
+('referencenumber','name','age','email','mobileno')
+ admin.py
+ from django.contrib import admin
+from .models import Student, StudentAdmin
+# Register your models here.
+admin.site.register(Student,StudentAdmin)
+
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![image](https://github.com/SAIDARSHINI27072005/django-orm-app/assets/147474227/3819e9c1-c31a-43da-811c-43d8428e0dee)
+
 
 
 ## RESULT
+The program for creating a database using ORM has been executed sucessfully.
