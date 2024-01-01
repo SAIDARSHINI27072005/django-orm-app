@@ -19,6 +19,7 @@ Enter the code for admin.py and models.py
 ## PROGRAM
 ```
 models.py
+
 from django.db import models
 from django.contrib import admin
 # Create your models here.
@@ -32,8 +33,10 @@ number")
 class StudentAdmin(admin.ModelAdmin):
  list_display=
 ('referencenumber','name','age','email','mobileno')
+
  admin.py
- from django.contrib import admin
+
+from django.contrib import admin
 from .models import Student, StudentAdmin
 # Register your models here.
 admin.site.register(Student,StudentAdmin)
